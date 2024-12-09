@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87CEEB;
+}
+
+.car {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: #4c2ca4;
+    border-radius: 10px;
+    animation: moveCar 3s forwards;
+}
+
+.wheel {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    bottom: -15px;
+    animation: rotateWheel 0.5s linear infinite;
+}
+
+.wheel.left {
+    left: 20px;
+}
+
+.wheel.right {
+    right: 20px;
+}
+
+.headlight {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    animation: blinkHeadlight 1s infinite alternate;
+}
+
+@keyframes moveCar {
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: calc(100vw - 250px);
+    }
+
+}
+
+@keyframes rotateWheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blinkHeadlight {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
